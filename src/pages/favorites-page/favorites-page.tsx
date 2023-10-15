@@ -1,5 +1,5 @@
-import Footer from "../../components/footer/footer";
-import Header from "../../components/header/header";
+import Footer from '../../components/footer/footer';
+import Header from '../../components/header/header';
 
 export default function FavoritesPage(): JSX.Element {
   return (
@@ -44,7 +44,7 @@ export default function FavoritesPage(): JSX.Element {
                       </div>
                       <div className="place-card__rating rating">
                         <div className="place-card__stars rating__stars">
-                          <span style={{width: "100%"}}></span>
+                          <span style={{width: '100%'}}></span>
                           <span className="visually-hidden">Rating</span>
                         </div>
                       </div>
@@ -76,7 +76,7 @@ export default function FavoritesPage(): JSX.Element {
                       </div>
                       <div className="place-card__rating rating">
                         <div className="place-card__stars rating__stars">
-                          <span style={{width: "80%"}}></span>
+                          <span style={{width: '80%'}}></span>
                           <span className="visually-hidden">Rating</span>
                         </div>
                       </div>
@@ -119,7 +119,7 @@ export default function FavoritesPage(): JSX.Element {
                       </div>
                       <div className="place-card__rating rating">
                         <div className="place-card__stars rating__stars">
-                          <span style={{width: "100%"}}></span>
+                          <span style={{width: '100%'}}></span>
                           <span className="visually-hidden">Rating</span>
                         </div>
                       </div>

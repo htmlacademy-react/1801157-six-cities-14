@@ -1,5 +1,5 @@
-import Header from "../../components/header/header";
-import Locations from "../../components/locations/locations";
+import Header from '../../components/header/header';
+import Locations from '../../components/locations/locations';
 
 export default function MainEmptyPage(): JSX.Element {
   return (
