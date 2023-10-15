@@ -3,7 +3,7 @@ import Header from '../../components/header/header';
 import Locations from '../../components/locations/locations';
 
 type MainScreenProps = {
-	placesCount: number
+	placesCount: number,
 }
 
 export default function MainPage({placesCount}: MainScreenProps): JSX.Element {
@@ -35,19 +35,23 @@ export default function MainPage({placesCount}: MainScreenProps): JSX.Element {
 									<li
 										className="places__option places__option--active"
 										tabIndex={0}
-									>Popular</li>
+									>Popular
+									</li>
 									<li
 										className="places__option"
 										tabIndex={0}
-									>Price: low to high</li>
+									>Price: low to high
+									</li>
 									<li
 										className="places__option"
 										tabIndex={0}
-									>Price: high to low</li>
+									>Price: high to low
+									</li>
 									<li
 										className="places__option"
 										tabIndex={0}
-									>Top rated first</li>
+									>Top rated first
+									</li>
 								</ul>
 							</form>
 							<div className="cities__places-list places__list tabs__content">
