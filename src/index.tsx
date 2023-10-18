@@ -7,7 +7,7 @@ const root = ReactDOM.createRoot(
 );
 
 const setting = {
-  PlacesCount: 312,
+  PlacesCount: 6,
 } as const;
 
 root.render(
