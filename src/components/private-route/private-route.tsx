@@ -1,15 +1,22 @@
 import { Navigate } from 'react-router-dom';
 import { AppRoute, AuthorizationStatus } from '../../const';
 
-type PrivateRouteProps = {
+type TPrivateRouteProps = {
   authorizationStatus: AuthorizationStatus;
+  redirectTo: AppRoute;
   children: JSX.Element;
 }
 
-export default function PrivateRoute(props: PrivateRouteProps) {
-  const {authorizationStatus, children} = props;
+export default function PrivateRoute({
+  authorizationStatus,
+  redirectTo,
+  children
+}: TPrivateRouteProps) {
+  const status = AuthorizationStatus.NoAuth; // NoAuth is correct
 
-  return (
-    authorizationStatus === AuthorizationStatus.Auth ? children : <Navigate to={ AppRoute.Login } />
+  return authorizationStatus === status ? (
+    <Navigate to={redirectTo} />
+  ) : (
+    children
   );
 }

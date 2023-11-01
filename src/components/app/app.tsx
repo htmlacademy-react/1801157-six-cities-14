@@ -6,40 +6,55 @@ import OfferPage from '../../pages/offer-page/offer-page';
 import FavoritesPage from '../../pages/favorites-page/favorites-page';
 import NotFoundPage from '../../pages/not-found-page/not-found-page';
 import PrivateRoute from '../private-route/private-route';
+import { HelmetProvider } from 'react-helmet-async';
+import { TOffer } from '../../types/offer';
 
-type AppScreenProps = {
-  placesCount: number;
+
+type TAppProps = {
+  offers: TOffer[];
 }
 
-export default function App({placesCount}: AppScreenProps): JSX.Element {
+export default function App({ offers }: TAppProps): JSX.Element {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path={ AppRoute.Main }
-          element={ <MainPage placesCount = {placesCount} /> }
-        />
-        <Route
-          path={ AppRoute.Login }
-          element={ <LoginPage /> }
-        />
-        <Route
-          path={ AppRoute.Offer }
-          element={ <OfferPage /> }
-        />
-        <Route
-          path={ AppRoute.Favorites }
-          element={
-            <PrivateRoute authorizationStatus={ AuthorizationStatus.Auth }>
-              <FavoritesPage />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="*"
-          element={ <NotFoundPage /> }
-        />
-      </Routes>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path={ AppRoute.Main }
+            element={ <MainPage offers = { offers } /> }
+          />
+          <Route
+            path={ AppRoute.Login }
+            element={
+              <PrivateRoute
+                authorizationStatus={ AuthorizationStatus.Auth }
+                redirectTo={ AppRoute.Main }
+              >
+                <LoginPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path={ `${AppRoute.Offer}/:offerId` }
+            element={ <OfferPage offers={ offers }/> }
+          />
+          <Route
+            path={ AppRoute.Favorites }
+            element={
+              <PrivateRoute
+                authorizationStatus={ AuthorizationStatus.NoAuth }
+                redirectTo={ AppRoute.Login }
+              >
+                <FavoritesPage offers={ offers }/>
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="*"
+            element={ <NotFoundPage /> }
+          />
+        </Routes>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
