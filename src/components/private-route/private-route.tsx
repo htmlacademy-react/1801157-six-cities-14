@@ -12,7 +12,7 @@ export default function PrivateRoute({
   redirectTo,
   children
 }: TPrivateRouteProps) {
-  const status = AuthorizationStatus.NoAuth; // NoAuth is correct
+  const status = AuthorizationStatus.Auth; // NoAuth is correct
 
   return authorizationStatus === status ? (
     <Navigate to={redirectTo} />

@@ -20,7 +20,7 @@ export default function MainPage({ offers }: TMainPageProps): JSX.Element {
         <div className="tabs">
           <Locations />
         </div>
-        <Cities offers={ offers }/>
+        <Cities offers={ offers } />
       </main>
     </div>
   );

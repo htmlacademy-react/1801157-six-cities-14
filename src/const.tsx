@@ -12,14 +12,31 @@ export enum AuthorizationStatus {
   Unknown = 'UNKNOWN'
 }
 
-export enum CitiesName {
-  Paris = 'Paris',
-  Cologne = 'Cologne',
-  Brussels = 'Brussels',
-  Amsterdam = 'Amsterdam',
-  Hamburg = 'Hamburg',
-  Dusseldorf = 'Dusseldorf'
-}
+export const CitiesLocation = {
+  Paris: {
+    name: 'Paris',
+  },
+  Cologne: {
+    name: 'Cologne',
+  },
+  Brussels: {
+    name: 'Brussels',
+  },
+  Amsterdam: {
+    name: 'Amsterdam',
+    location: {
+      latitude: 52.3676,
+      longitude: 4.9041,
+      zoom: 12,
+    }
+  },
+  Hamburg: {
+    name: 'Hamburg',
+  },
+  Dusseldorf: {
+    name: 'Dusseldorf',
+  }
+};
 
 export const MIN_COMMENT_LENGTH = 50;
 export const MAX_COMMENT_LENGTH = 100;

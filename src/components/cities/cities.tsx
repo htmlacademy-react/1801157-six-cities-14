@@ -1,28 +1,29 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import { TOfferPreview } from '../../types/offer-preview';
 import CitiesCard from '../cities-card/cities-card';
-import { CitiesName } from '../../const';
+import { CitiesLocation } from '../../const';
+import Map from '../map/map';
 
 type TCitiesProps = {
   offers: TOfferPreview[];
 }
 
 export default function Cities({ offers }: TCitiesProps) {
-  // const [hoverOfferId, setHoverOfferId] = useState<
-  //   TOfferPreview['id'] | null
-  // >(null);
-  const activeCity = CitiesName.Amsterdam;
+  const [hoverOfferId, setHoverOfferId] = useState<
+    TOfferPreview['id'] | null
+  >(null);
+  const activeCity = CitiesLocation.Amsterdam;
 
-  // function handleCardHover(offerId: TOfferPreview['id'] | null) {
-  //   setHoverOfferId(offerId);
-  // }
+  function handleCardHover(offerId: TOfferPreview['id'] | null) {
+    setHoverOfferId(offerId);
+  }
 
   return (
     <div className="cities">
       <div className="cities__places-container container">
         <section className="cities__places places">
           <h2 className="visually-hidden">Places</h2>
-          <b className="places__found">{offers.length} places to stay in {activeCity}</b>
+          <b className="places__found">{offers.length} places to stay in {activeCity.name}</b>
           <form className="places__sorting" action="#" method="get">
             <span className="places__sorting-caption">Sort by</span>
             <span
@@ -62,14 +63,21 @@ export default function Cities({ offers }: TCitiesProps) {
               <CitiesCard
                 key={offer.id}
                 offer={offer}
-                block="cities"
-                // onCardHover={handleCardHover}
+                block='cities'
+                onCardHover={handleCardHover}
               />
             ))}
           </div>
         </section>
         <div className="cities__right-section">
-          <section className="cities__map map"></section>
+          <section className="cities__map map">
+            <Map
+              location={activeCity.location}
+              block='cities'
+              offers={offers}
+              specialOfferId={hoverOfferId}
+            />
+          </section>
         </div>
       </div>
     </div>

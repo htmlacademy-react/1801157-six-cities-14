@@ -1,16 +1,9 @@
-import { CitiesName } from '../const';
+import { CitiesLocation } from '../const';
 import { TOffer } from '../types/offer';
 
 export const offers: TOffer[] = [
   {
-    city: {
-      location: {
-        latitude: 52.370216,
-        longitude: 4.895168,
-        zoom: 10
-      },
-      name: CitiesName.Amsterdam,
-    },
+    city: CitiesLocation.Amsterdam,
     previewImage: 'https://14.react.pages.academy/static/offer/5.jpg',
     images: [
       'https://14.react.pages.academy/static/offer/16.jpg',
@@ -47,22 +40,15 @@ export const offers: TOffer[] = [
     },
     description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
     location: {
-      latitude: 52.35514938496378,
-      longitude: 4.673877537499948,
+      latitude: 52.3909553943508,
+      longitude: 4.85309666406198,
       zoom: 8,
     },
     id: '1',
   },
   {
     bedrooms: 1,
-    city: {
-      location: {
-        latitude: 51.370216,
-        longitude: 4.03568,
-        zoom: 11
-      },
-      name: CitiesName.Cologne,
-    },
+    city: CitiesLocation.Amsterdam,
     description: 'something interesting',
     goods: [
       'woter',
@@ -94,8 +80,8 @@ export const offers: TOffer[] = [
     isFavorite: true,
     isPremium: false,
     location: {
-      latitude: 52.8972578,
-      longitude: 4.13448,
+      latitude: 52.3609553943508,
+      longitude: 4.85309666406198,
       zoom: 7,
     },
     maxAdults: 2,
@@ -107,14 +93,7 @@ export const offers: TOffer[] = [
   },
   {
     bedrooms: 2,
-    city: {
-      location: {
-        latitude: 53.6335635,
-        longitude: 3.895168,
-        zoom: 12
-      },
-      name: CitiesName.Paris,
-    },
+    city: CitiesLocation.Amsterdam,
     description: 'This is Paris',
     goods: [
       'Pillows',
@@ -146,8 +125,8 @@ export const offers: TOffer[] = [
     isFavorite: false,
     isPremium: true,
     location: {
-      latitude: 50.35514938496378,
-      longitude: 3.673877537499948,
+      latitude: 52.3909553943508,
+      longitude: 4.929309666406198,
       zoom: 9
     },
     maxAdults: 1,
@@ -159,14 +138,7 @@ export const offers: TOffer[] = [
   },
   {
     bedrooms: 4,
-    city: {
-      location: {
-        latitude: 55.370216,
-        longitude: 2.895168,
-        zoom: 13,
-      },
-      name: CitiesName.Hamburg,
-    },
+    city: CitiesLocation.Amsterdam,
     description: 'Germany',
     goods: [
       'Big size bed',
@@ -199,9 +171,9 @@ export const offers: TOffer[] = [
     isFavorite: false,
     isPremium: true,
     location: {
-      latitude: 54.35514938496378,
-      longitude: 7.673877537499948,
-      zoom: 11,
+      latitude: 52.3809553943508,
+      longitude: 4.939309666406198,
+      zoom: 10,
     },
     maxAdults: 5,
     previewImage: 'https://14.react.pages.academy/static/offer/3.jpg',
