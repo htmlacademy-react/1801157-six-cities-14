@@ -38,7 +38,7 @@ export default function Map(props: TMapProps): JSX.Element {
 
   useEffect(() => {
     if(map) {
-      const markerLayer = layerGroup().addTo(map);
+      const markerLayer = layerGroup().addTo(map); // fix
 
       offers.forEach((offer) => {
         const marker = new Marker({
@@ -60,5 +60,17 @@ export default function Map(props: TMapProps): JSX.Element {
     }
   }, [map, offers, specialOfferId]);
 
-  return <section className={`${block}__map map`} ref={mapRef} style={{height: '100%'}}></section>;
+  return (
+    <section
+      className={`${block}__map map`}
+      ref={mapRef}
+      style={{
+        height: '100%',
+        minHeight: '500px',
+        width: '100%',
+        maxWidth: '1144px',
+        margin: '0 auto',
+      }}
+    />
+  );
 }

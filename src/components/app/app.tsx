@@ -8,13 +8,15 @@ import NotFoundPage from '../../pages/not-found-page/not-found-page';
 import PrivateRoute from '../private-route/private-route';
 import { HelmetProvider } from 'react-helmet-async';
 import { TOffer } from '../../types/offer';
+import { TReview } from '../../types/review';
 
 
 type TAppProps = {
   offers: TOffer[];
+  reviews: TReview[];
 }
 
-export default function App({ offers }: TAppProps): JSX.Element {
+export default function App({ offers, reviews }: TAppProps): JSX.Element {
   return (
     <HelmetProvider>
       <BrowserRouter>
@@ -36,7 +38,12 @@ export default function App({ offers }: TAppProps): JSX.Element {
           />
           <Route
             path={ `${AppRoute.Offer}/:offerId` }
-            element={ <OfferPage offers={ offers }/> }
+            element={
+              <OfferPage
+                offers={ offers }
+                reviews={ reviews }
+              />
+            }
           />
           <Route
             path={ AppRoute.Favorites }

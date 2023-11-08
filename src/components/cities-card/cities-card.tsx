@@ -59,6 +59,7 @@ export default function CitiesCard({offer, block, size = 'large', onCardHover}: 
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
+            {/* fix */}
             <span style={{ width: `${(100 / 5) * Math.round(rating)}%` }}></span>
             <span className="visually-hidden">Rating</span>
           </div>
