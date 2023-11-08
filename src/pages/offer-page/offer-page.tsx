@@ -4,12 +4,14 @@ import { TOffer } from '../../types/offer';
 import { Navigate, useParams } from 'react-router-dom';
 import { AppRoute } from '../../const';
 import OfferDetails from '../../components/offer-details/offer-details';
+import { TReview } from '../../types/review';
 
 type TOfferPageProps = {
   offers: TOffer[];
+  reviews: TReview[];
 }
 
-export default function OfferPage({offers}: TOfferPageProps): JSX.Element {
+export default function OfferPage({offers,reviews}: TOfferPageProps): JSX.Element {
   const { offerId } = useParams();
   const offer = offers.find((item) => item.id === offerId);
 
@@ -25,7 +27,7 @@ export default function OfferPage({offers}: TOfferPageProps): JSX.Element {
       <Header />
       <main className="page__main page__main--offer">
         <section className="offer">
-          <OfferDetails offer={offer} />
+          <OfferDetails offer={offer} reviews={reviews}/>
           <section className="offer__map map"></section>
         </section>
         <div className="container">
