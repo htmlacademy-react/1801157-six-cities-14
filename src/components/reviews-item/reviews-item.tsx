@@ -25,7 +25,7 @@ export default function ReviewsItem({reviewsItem}: TReviewsItemProps) {
             src={user.avatarUrl}
             width="54"
             height="54"
-            alt="Reviews avatar"
+            alt={user.name}
           />
         </div>
         <span className="reviews__user-name">
@@ -42,7 +42,8 @@ export default function ReviewsItem({reviewsItem}: TReviewsItemProps) {
         <p className="reviews__text">
           {comment}
         </p>
-        <time className="reviews__time" dateTime="2019-04-24">{date}</time>
+        {/* fix */}
+        <time className="reviews__time" dateTime={date}>{date}</time>
       </div>
     </li>
   );

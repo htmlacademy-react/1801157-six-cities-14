@@ -1,6 +1,5 @@
 import cn from 'classnames';
 import { TOffer } from '../../types/offer';
-import ReviewForm from '../review-form/review-form';
 import ReviewsList from '../reviews-list/reviews-list';
 import { TReview } from '../../types/review';
 
@@ -115,11 +114,7 @@ export default function OfferDetails({ offer, reviews }: TOfferDetalisProp) {
               </p>
             </div>
           </div>
-          <section className="offer__reviews reviews">
-            <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">1</span></h2>
-            <ReviewsList reviews={reviews}/>
-            <ReviewForm />
-          </section>
+          <ReviewsList reviews={reviews}/>
         </div>
       </div>
     </>
